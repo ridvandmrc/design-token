@@ -1,0 +1,67 @@
+<html theme="light">
+  <head>
+    <link type="text/css" rel="stylesheet" href="../lib/default/light.css" />
+    <link type="text/css" rel="stylesheet" href="../lib/default/dark.css" />
+
+    <script>
+      setTimeout(() => {
+        const html = document.querySelector("html");
+        const btn = document.querySelector("button");
+        btn?.addEventListener("click", () => {
+          const theme = html.getAttribute("theme");
+          html.setAttribute("theme", theme === "dark" ? "light" : "dark");
+        });
+      }, 500);
+    </script>
+  </head>
+
+  <body
+    style="
+      transition: background-color 300ms;
+      background-color: var(--default-background);
+    "
+  >
+    <button
+      style="
+        background-color: var(--default-primary-button-background);
+        color: var(--default-primary-button-color);
+        padding: var(--default-space-md);
+        border: none;
+        cursor: pointer;
+        border-radius: var(--default-radius-sm);
+        transition: background-color, color 300ms;
+      "
+    >
+      Toggle Button Primary
+    </button>
+
+    <div
+      style="
+        border: 1px solid var(--default-secondary-button-color);
+        border-radius: var(--default-radius-md);
+        min-width: 200px;
+        min-height: 200px;
+        margin-top: var(--default-gutter-md);
+        display: flex;
+      "
+    >
+      <button
+        style="
+          background-color: var(--default-secondary-button-background);
+          color: var(--default-secondary-button-color);
+          padding: var(--default-space-md);
+          border: none;
+          cursor: pointer;
+          border-radius: var(--default-radius-sm);
+          transition: background-color, color 300ms;
+          border: 1px solid var(--default-secondary-button-color);
+          margin: var(--default-gutter-md);
+          margin-top: auto;
+          margin-left: auto;
+        "
+      >
+        Button Secondary
+      </button>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "name": "design-tokens",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "remove": "rimraf lib",
+    "prebuild": "npm run remove & tsc",
+    "build": "node ./dist/index.js "
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "design-tokens": "^1.0.1",
+    "rimraf": "^5.0.1",
+    "tsc": "^2.0.4",
+    "typescript": "^5.1.6"
+  },
+  "devDependencies": {
+    "@types/node": "^20.4.4"
+  }
+}

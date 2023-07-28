@@ -1,14 +1,14 @@
-import buildTokens from "design-tokens";
+import { generateToken } from "token-wizard";
 import { defaultLightBrand, defaultDarkBrand } from "./brand";
 import { TokenType, checkTokenType, writeFile } from "./utils";
 
 const tokenTypes: TokenType[] = ["scss", "css"];
 
-const defaultLight = buildTokens({
-  ...defaultLightBrand,
+const defaultLight = generateToken({
+  ...defaultLightBrand, 
 });
 
-const defaultDark = buildTokens({ ...defaultDarkBrand });
+const defaultDark = generateToken({ ...defaultDarkBrand });
 
 const tokenFunc = (brand: IBuildType, target: TokenType) => {
   const token = checkTokenType(target);
@@ -21,7 +21,7 @@ const tokenFunc = (brand: IBuildType, target: TokenType) => {
 
 tokenTypes.forEach((tokenType) =>
   writeFile({
-    data: tokenFunc(defaultLight, tokenType),
+    data: tokenFunc(defaultLight as any, tokenType),
     fileName: "light",
     type: tokenType,
     workspace: "default",
@@ -30,7 +30,7 @@ tokenTypes.forEach((tokenType) =>
 
 tokenTypes.forEach((tokenTypes) =>
   writeFile({
-    data: tokenFunc(defaultDark, tokenTypes),
+    data: tokenFunc(defaultDark as any, tokenTypes),
     fileName: "dark",
     type: tokenTypes,
     workspace: "default",

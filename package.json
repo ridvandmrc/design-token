@@ -6,14 +6,14 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "remove": "rimraf lib",
-    "prebuild": "npm run remove & tsc",
+    "prebuild": "npm run remove & node_modules/typescript/bin/tsc",
     "build": "node ./dist/index.js "
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "design-tokens": "^1.0.1",
     "rimraf": "^5.0.1",
+    "token-wizard": "^1.0.1",
     "tsc": "^2.0.4",
     "typescript": "^5.1.6"
   },
